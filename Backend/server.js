@@ -1,7 +1,8 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const app = express();
 const port = 5000;
@@ -10,9 +11,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root2',
-  password: '**********',
+  host: 'employee-db.c9sg8088kqsm.ap-south-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'employee123',
   database: 'employee_management',
 });
 

@@ -18,14 +18,14 @@ const EmployeeForm = ({ onAddEmployee, onUpdateEmployee, selectedEmployee, onCle
 
   const addOrUpdateEmployee = () => {
     if (selectedEmployee) {
-      axios.put(`http://localhost:5000/employees/${selectedEmployee.id}`, employee)
+      axios.put(`/employees/${selectedEmployee.id}`, employee)
         .then(response => {
           onUpdateEmployee(response.data);
           onClearSelection();
         })
         .catch(error => console.error(error));
     } else {
-      axios.post('http://localhost:5000/employees', employee)
+      axios.post('/employees', employee)
         .then(response => {
           onAddEmployee(response.data);
           setEmployee({ name: '', position: '' });
@@ -47,7 +47,7 @@ const EmployeeForm = ({ onAddEmployee, onUpdateEmployee, selectedEmployee, onCle
             <label htmlFor="position" className="form-label">Position:</label>
             <input type="text" id="position" className="form-control" name="position" value={employee.position} onChange={handleInputChange} />
           </div>
-          <button type="button" className={`btn ${selectedEmployee ? 'btn-warning' : 'btn-primary'}`} onClick={addOrUpdateEmployee}>
+          <button type="button" className={`btn ${selectedEmployee ? 'btn-warning' : 'btn-success'}`} onClick={addOrUpdateEmployee}>
             {selectedEmployee ? 'Update Employee' : 'Add Employee'}
           </button>
           {selectedEmployee && (

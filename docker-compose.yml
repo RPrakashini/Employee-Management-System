@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: employee-backend
+    container_name: employee-backend
+    ports:
+      - "5000:5000"
+    restart: always
+
+  frontend:
+    image: employee-frontend
+    container_name: employee-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always

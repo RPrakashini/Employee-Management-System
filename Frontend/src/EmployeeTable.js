@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const EmployeeTable = ({ employees, onDeleteEmployee, onSelectEmployee }) => {
   const deleteEmployee = (id) => {
-    axios.delete(`http://localhost:5000/employees/${id}`)
+    axios.delete(`/employees/${id}`)
       .then(() => onDeleteEmployee(id))
       .catch(error => console.error(error));
   };

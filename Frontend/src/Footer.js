@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const Footer = () => {
+function Footer() {
   return (
-    <div style={{ position: 'fixed', bottom: 0, right: 0, margin: '10px' }}>
-      <p style={{ fontSize: '17px', color: '#ffffff'}}>©Made by Pankaj Chourasia</p>
-    </div>
+    <footer className="text-center mt-5 text-muted">
+      <hr />
+
+      <p><strong>CloudOps HR Suite</strong></p>
+
+      <p>Developed by Prakashini </p>
+
+      <small>AWS Cloud | Docker | Jenkins | CI/CD | Amazon RDS</small>
+    </footer>
   );
-};
+}
 
 export default Footer;
