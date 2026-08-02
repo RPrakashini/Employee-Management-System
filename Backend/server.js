@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: 'employee-db.c9sg8088kqsm.ap-south-1.rds.amazonaws.com',
   user: 'admin',
-  password: 'employee123',
+  password: 'admin123',
   database: 'employee_management',
 });
 
